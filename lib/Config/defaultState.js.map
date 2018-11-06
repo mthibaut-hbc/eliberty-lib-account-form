@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/Config/defaultState.js"],"names":["initialState","intl","locale"],"mappings":";;;;;;AACA,IAAMA,eAAe;AACnBC,QAAM;AACJC,YAAQ;AADJ;AADa,CAArB;;kBAMeF,Y","file":"defaultState.js","sourcesContent":["\nconst initialState = {\n  intl: {\n    locale: 'fr'\n  },\n};\n\nexport default initialState;"]}
