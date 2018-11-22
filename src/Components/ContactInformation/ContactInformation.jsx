@@ -115,16 +115,16 @@ class ContactInformation extends Component {
           <p><FormattedMessage id="rp.checkout.billingaddress.address1" defaultMessage="address1"/></p>
         </div>
         <div className="col-xs-6">
-          <p>{ContactInformation.getEmailValue(localInfo) || ""}</p>
-          <p>{ContactInformation.getFirstnameValue(localInfo) || ""}</p>
-          <p>{ContactInformation.getFirstnameValue(localInfo) || ""}</p>
-          <p>{ContactInformation.getMobileValue(localInfo) || ""}</p>
+          {/*<p>{ContactInformation.getEmailValue(localInfo) || ""}</p>*/}
+          {/*<p>{ContactInformation.getFirstnameValue(localInfo) || ""}</p>*/}
+          {/*<p>{ContactInformation.getFirstnameValue(localInfo) || ""}</p>*/}
+          {/*<p>{ContactInformation.getMobileValue(localInfo) || ""}</p>*/}
 
-          <p>{ContactInformation.getAddress1Value(localInfo) || ""}
-            {ContactInformation.getAddress2Value(localInfo) || ""}
-            {ContactInformation.getZipcodeValue(localInfo) || ""}
-            {ContactInformation.getCityValue(localInfo) || ""}
-            {ContactInformation.getCountryValue(localInfo) || ""}</p>
+          {/*<p>{ContactInformation.getAddress1Value(localInfo) || ""}*/}
+            {/*{ContactInformation.getAddress2Value(localInfo) || ""}*/}
+            {/*{ContactInformation.getZipcodeValue(localInfo) || ""}*/}
+            {/*{ContactInformation.getCityValue(localInfo) || ""}*/}
+            {/*{ContactInformation.getCountryValue(localInfo) || ""}</p>*/}
         </div>
         <button className="btnEditContact"
                 onClick={() => ""}
