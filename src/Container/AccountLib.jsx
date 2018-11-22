@@ -1,11 +1,15 @@
 import React from 'react';
-// import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
-// import '../../node_modules/bootstrap-sass/assets/javascripts/bootstrap';
-
+import {PropTypes} from "prop-types";
+import ContactInformation from '../Components/ContactInformation/ContactInformation';
 
 const AccountLib = props => (
   <div>
     <span>HELLO AccountLib</span>
+    <ContactInformation
+      localInfo={props.localInfo}
+      render={props.render}
+      contact={props.contact}
+    />
   </div>
 );
 

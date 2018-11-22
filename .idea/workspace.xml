@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af804ecc-ab96-45f3-96a4-425133f3a005" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Config/defaultState.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Config/defaultState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Config/defaultState.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Config/defaultState.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ContactInformation/ContactInformation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ContactInformation/ContactInformation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/AccountLib.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/AccountLib.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +28,7 @@
           <entry key="babelrc" value="1" />
           <entry key="js" value="24" />
           <entry key="json" value="6" />
-          <entry key="jsx" value="15" />
+          <entry key="jsx" value="16" />
           <entry key="lock" value="1" />
           <entry key="md" value="3" />
           <entry key="scss" value="2" />
@@ -40,7 +39,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="7" />
-          <entry key="JSX Harmony" value="15" />
+          <entry key="JSX Harmony" value="16" />
           <entry key="JavaScript" value="24" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -54,7 +53,7 @@
         <counts>
           <entry key="js" value="204" />
           <entry key="json" value="110" />
-          <entry key="jsx" value="55" />
+          <entry key="jsx" value="177" />
           <entry key="md" value="50" />
           <entry key="yaml" value="2" />
         </counts>
@@ -62,7 +61,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="110" />
-          <entry key="JSX Harmony" value="55" />
+          <entry key="JSX Harmony" value="177" />
           <entry key="JavaScript" value="204" />
           <entry key="Markdown" value="50" />
           <entry key="YAML" value="2" />
@@ -72,20 +71,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Container/AccountLib.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="225">
+              <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/AccountForm/AccountForm.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="1199">
+              <caret line="312" column="15" selection-start-line="312" selection-start-column="15" selection-end-line="312" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/AddressForm/AddressForm.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2415">
-              <caret line="164" selection-start-line="164" selection-end-line="164" />
+            <state relative-caret-position="1117">
+              <caret line="222" column="28" lean-forward="true" selection-start-line="222" selection-start-column="28" selection-end-line="222" selection-end-column="28" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -105,8 +110,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/ContactInformation/ContactInformation.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="121" column="3" selection-start-line="121" selection-start-column="3" selection-end-line="121" selection-end-column="3" />
+            <state relative-caret-position="1086">
+              <caret line="172" column="44" lean-forward="true" selection-start-line="164" selection-start-column="1" selection-end-line="172" selection-end-column="44" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -117,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/CreationAccountForm/CreationAccountForm.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3311">
-              <caret line="393" column="47" selection-start-line="393" selection-start-column="47" selection-end-line="393" selection-end-column="47" />
+            <state relative-caret-position="-1943">
+              <caret line="185" column="27" lean-forward="true" selection-start-line="185" selection-start-column="27" selection-end-line="185" selection-end-column="27" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -129,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/PasswordAndProgressBar/PasswordAndProgressBar.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1119">
-              <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
+            <state relative-caret-position="533">
+              <caret line="41" column="3" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -153,8 +158,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Store/Store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="10" selection-end-column="21" />
+            <state relative-caret-position="150">
+              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -196,19 +201,19 @@
         <option value="$PROJECT_DIR$/src/Assets/svg/eye-button.svg" />
         <option value="$PROJECT_DIR$/src/Assets/svg/identificationInit.svg" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/Container/AccountLib.jsx" />
         <option value="$PROJECT_DIR$/src/index.jsx" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/webpack.production.config.js" />
         <option value="$PROJECT_DIR$/src/Components/AccountForm/AccountForm.jsx" />
         <option value="$PROJECT_DIR$/src/Components/AddressForm/AddressForm.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/ContactInformation/ContactInformation.jsx" />
         <option value="$PROJECT_DIR$/src/Components/CreationAccountForm/CreationAccountForm.jsx" />
         <option value="$PROJECT_DIR$/src/Components/PasswordAndProgressBar/PasswordAndProgressBar.jsx" />
         <option value="$PROJECT_DIR$/src/Config/defaultState.js" />
         <option value="$PROJECT_DIR$/src/Store/Store.js" />
         <option value="$PROJECT_DIR$/src/Reducers/Reducers.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/Components/ContactInformation/ContactInformation.jsx" />
+        <option value="$PROJECT_DIR$/src/Container/AccountLib.jsx" />
       </list>
     </option>
   </component>
@@ -227,9 +232,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1251" />
     <option name="y" value="22" />
-    <option name="width" value="1251" />
+    <option name="width" value="1700" />
     <option name="height" value="1418" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -258,6 +262,34 @@
               <item name="eliberty-lib-account-form" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eliberty-lib-account-form" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliberty-lib-account-form" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="AccountForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eliberty-lib-account-form" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliberty-lib-account-form" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="AddressForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eliberty-lib-account-form" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliberty-lib-account-form" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactInformation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eliberty-lib-account-form" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliberty-lib-account-form" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="CreationAccountForm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eliberty-lib-account-form" type="b2602c69:ProjectViewProjectNode" />
@@ -337,19 +369,19 @@
       <option name="presentableId" value="Default" />
       <updated>1541426184695</updated>
       <workItem from="1541426185776" duration="32459000" />
-      <workItem from="1542613017321" duration="1915000" />
+      <workItem from="1542613017321" duration="7406000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34374000" />
+    <option name="totallyTimeSpent" value="39865000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1251" y="22" width="1251" height="1418" extended-state="0" />
+    <frame x="0" y="22" width="1700" height="1418" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33498758" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2442702" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Quokka" order="1" />
@@ -369,28 +401,6 @@
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.330298" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Quokka" order="1" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Docker" order="5" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -494,72 +504,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/AccountForm/AccountForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/AddressForm/AddressForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2415">
-          <caret line="164" selection-start-line="164" selection-end-line="164" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Store/Store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Reducers/Reducers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/PasswordAndProgressBar/PasswordAndProgressBar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1119">
-          <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/CreationAccountForm/CreationAccountForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3311">
-          <caret line="393" column="47" selection-start-line="393" selection-start-column="47" selection-end-line="393" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/ContactInformation/ContactInformation.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="121" column="3" selection-start-line="121" selection-start-column="3" selection-end-line="121" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -577,17 +527,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/AccountLib.jsx">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        <state relative-caret-position="360">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/Components/AccountForm/AccountForm.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="1199">
+          <caret line="312" column="15" selection-start-line="312" selection-start-column="15" selection-end-line="312" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/AddressForm/AddressForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1117">
+          <caret line="222" column="28" lean-forward="true" selection-start-line="222" selection-start-column="28" selection-end-line="222" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/CreationAccountForm/CreationAccountForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1943">
+          <caret line="185" column="27" lean-forward="true" selection-start-line="185" selection-start-column="27" selection-end-line="185" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/PasswordAndProgressBar/PasswordAndProgressBar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="41" column="3" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Store/Store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ContactInformation/ContactInformation.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1086">
+          <caret line="172" column="44" lean-forward="true" selection-start-line="164" selection-start-column="1" selection-end-line="172" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/AccountLib.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

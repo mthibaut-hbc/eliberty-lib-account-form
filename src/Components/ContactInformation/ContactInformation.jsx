@@ -121,28 +121,28 @@ class ContactInformation extends Component {
     );
   }
 
-  renderAccountForm() {
-    return (
-      <div id="accountForm" className="checkout_part_content accountForm">
-        <div className="panel-body">
-          <AccountForm
-            contact={this.props.contact}
-            localInfo={this.props.localInfo}
-            render={this.props.render}
-            setAddress={this.props.setAddress}
-            setFirstname={this.props.setFirstname}
-            setLastname={this.props.setLastname}
-            setMobile={this.props.setMobile}
-            setOptIn={this.props.setOptIn}
-            setPhone={this.props.setPhone}
-            setEmail={this.props.setEmail}
-            setBirthdate={this.props.setBirthdate}
-            setPassword={this.props.setPassword}
-          />
-        </div>
-      </div>
-    );
-  }
+  // renderAccountForm() {
+  //   return (
+  //     <div id="accountForm" className="checkout_part_content accountForm">
+  //       <div className="panel-body">
+  //         <AccountForm
+  //           contact={this.props.contact}
+  //           localInfo={this.props.localInfo}
+  //           render={this.props.render}
+  //           setAddress={this.props.setAddress}
+  //           setFirstname={this.props.setFirstname}
+  //           setLastname={this.props.setLastname}
+  //           setMobile={this.props.setMobile}
+  //           setOptIn={this.props.setOptIn}
+  //           setPhone={this.props.setPhone}
+  //           setEmail={this.props.setEmail}
+  //           setBirthdate={this.props.setBirthdate}
+  //           setPassword={this.props.setPassword}
+  //         />
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   render() {
     const {
@@ -162,15 +162,15 @@ ContactInformation.proptypes = {
   localInfo: PropTypes.object.isRequired,
   render: PropTypes.object.isRequired,
   contact: PropTypes.func.isRequired,
-  setAddress: PropTypes.func.isRequired,
-  setFirstname: PropTypes.func.isRequired,
-  setLastname: PropTypes.func.isRequired,
-  setMobile: PropTypes.func.isRequired,
-  setOptIn: PropTypes.func.isRequired,
-  setPhone: PropTypes.func.isRequired,
-  setEmail: PropTypes.func.isRequired,
-  setBirthdate: PropTypes.func.isRequired,
-  setPassword: PropTypes.func.isRequired,
+  // setAddress: PropTypes.func.isRequired,
+  // setFirstname: PropTypes.func.isRequired,
+  // setLastname: PropTypes.func.isRequired,
+  // setMobile: PropTypes.func.isRequired,
+  // setOptIn: PropTypes.func.isRequired,
+  // setPhone: PropTypes.func.isRequired,
+  // setEmail: PropTypes.func.isRequired,
+  // setBirthdate: PropTypes.func.isRequired,
+  // setPassword: PropTypes.func.isRequired,
 };
 
 ContactInformation.defaultProps = {
