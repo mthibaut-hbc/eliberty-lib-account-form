@@ -105,7 +105,7 @@ class ContactInformation extends Component {
     return (
       <div className="quickInfoRecap col-xs-12">
         <span className="bookSvg">{ContactInformation.renderSvgBook()}</span>
-        <p>Informations de contact</p>
+        <p className="titleRecapContact">Informations de contact</p>
         <div className="col-xs-4">
           <p><FormattedMessage id="rp.checkout.customer.email.label" defaultMessage="email"/></p>
           <p><FormattedMessage id="rp.checkout.customer.lastname" defaultMessage="lastname"/></p>
