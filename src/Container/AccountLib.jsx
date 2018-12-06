@@ -4,9 +4,8 @@ import ContactInformation from '../Components/ContactInformation/ContactInformat
 
 const AccountLib = props => (
   <div>
-    <span>HELLO AccountLib</span>
     <ContactInformation
-      identificationRedux={props.identificationRedux}
+      data={props.data}
     />
   </div>
 );

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { PropTypes} from "prop-types";
 import { FormattedMessage, injectIntl } from 'react-intl';
-import {Collapse} from "react-collapse";
-import AccountForm from '../../Components/AccountForm/AccountForm';
+import { Map, fromJS } from 'immutable';
 
 /**
  * Class : Quick Address Recap
@@ -14,75 +13,75 @@ class ContactInformation extends Component {
     super(props);
   }
 
-  static getLastnameValue(localInfo) {
-    return localInfo.size > 0
-      ? localInfo.get('values').get('lastname')
+  static getLastnameValue(contact) {
+    return contact.size > 0
+      ? contact.get('lastname')
       : '';
   }
 
-  static getFirstnameValue(localInfo) {
-    return localInfo.size > 0
-      ? localInfo.get('values').get('firstname')
+  static getFirstnameValue(contact) {
+    return contact.size > 0
+      ? contact.get('firstname')
       : '';
   }
 
-  static getBirthdateValue(localInfo) {
-    return localInfo.size > 0
-      ? moment(localInfo.get('values').get('birthdate'), 'YYYY-MM-DD HH:mm:ssZZ').format('DD/MM/YYYY')
+  static getBirthdateValue(contact) {
+    return contact.size > 0
+      ? moment(contact.get('birthdate'), 'YYYY-MM-DD HH:mm:ssZZ').format('DD/MM/YYYY')
       : '';
   }
 
-  static getOptinValue(localInfo) {
-    return localInfo.size > 0
-      ? localInfo.get('values').get('optIn')
+  static getOptinValue(contact) {
+    return contact.size > 0
+      ? contact.get('optIn')
       : '';
   }
 
-  static getMobileValue(localInfo) {
-    return localInfo.size > 0
-      ? localInfo.get('values').get('mobile')
+  static getMobileValue(contact) {
+    return contact.size > 0
+      ? contact.get('mobile')
       : '';
   }
 
-  static getPhoneValue(localInfo) {
-    return localInfo.size > 0
-      ? localInfo.get('values').get('phone')
+  static getPhoneValue(contact) {
+    return contact.size > 0
+      ? contact.get('phone')
       : '';
   }
 
-  static getEmailValue(localInfo) {
-    return localInfo.size > 0
-      ? localInfo.get('values').get('email')
+  static getEmailValue(contact) {
+    return contact.size > 0
+      ? contact.get('email')
       : '';
   }
 
-  static getAddress1Value(localInfo) {
-    return localInfo.size !== undefined
-      ? localInfo.get('addresses', new Map()).get('address1')
+  static getAddress1Value(contact) {
+    return contact.size !== undefined
+      ? contact.get('addresses', new Map()).get('address1')
       : '';
   }
 
-  static getAddress2Value(localInfo) {
-    return localInfo.size !== undefined
-      ? localInfo.get('addresses', new Map()).get('address2')
+  static getAddress2Value(contact) {
+    return contact.size !== undefined
+      ? contact.get('addresses', new Map()).get('address2')
       : '';
   }
 
-  static getZipcodeValue(localInfo) {
-    return localInfo.size !== undefined
-      ? localInfo.get('addresses', new Map()).get('zipcode')
+  static getZipcodeValue(contact) {
+    return contact.size !== undefined
+      ? contact.get('addresses', new Map()).get('zipcode')
       : '';
   }
 
-  static getCityValue(localInfo) {
-    return localInfo.size !== undefined
-      ? localInfo.get('addresses', new Map()).get('city')
+  static getCityValue(contact) {
+    return contact.size !== undefined
+      ? contact.get('addresses', new Map()).get('city')
       : '';
   }
 
-  static getCountryValue(localInfo) {
-    return localInfo.size !== undefined
-      ? localInfo.get('addresses', new Map()).get('country')
+  static getCountryValue(contact) {
+    return contact.size !== undefined
+      ? contact.get('addresses', new Map()).get('country')
       : '';
   }
 
@@ -102,7 +101,8 @@ class ContactInformation extends Component {
     </svg>
   }
 
-  renderQuickInfoRecap(localInfo) {
+  renderQuickInfoRecap(data) {
+    const contact = data.get('contact');
     return (
       <div className="quickInfoRecap col-xs-12">
         <span className="bookSvg">{ContactInformation.renderSvgBook()}</span>
@@ -115,16 +115,16 @@ class ContactInformation extends Component {
           <p><FormattedMessage id="rp.checkout.billingaddress.address1" defaultMessage="address1"/></p>
         </div>
         <div className="col-xs-6">
-          {/*<p>{ContactInformation.getEmailValue(localInfo) || ""}</p>*/}
-          {/*<p>{ContactInformation.getFirstnameValue(localInfo) || ""}</p>*/}
-          {/*<p>{ContactInformation.getFirstnameValue(localInfo) || ""}</p>*/}
-          {/*<p>{ContactInformation.getMobileValue(localInfo) || ""}</p>*/}
+          <p>{ContactInformation.getEmailValue(contact) || ""}</p>
+          <p>{ContactInformation.getFirstnameValue(contact) || ""}</p>
+          <p>{ContactInformation.getFirstnameValue(contact) || ""}</p>
+          <p>{ContactInformation.getMobileValue(contact) || ""}</p>
 
-          {/*<p>{ContactInformation.getAddress1Value(localInfo) || ""}*/}
-            {/*{ContactInformation.getAddress2Value(localInfo) || ""}*/}
-            {/*{ContactInformation.getZipcodeValue(localInfo) || ""}*/}
-            {/*{ContactInformation.getCityValue(localInfo) || ""}*/}
-            {/*{ContactInformation.getCountryValue(localInfo) || ""}</p>*/}
+          <p>{ContactInformation.getAddress1Value(contact) || ""}
+            {ContactInformation.getAddress2Value(contact) || ""}
+            {ContactInformation.getZipcodeValue(contact) || ""}
+            {ContactInformation.getCityValue(contact) || ""}
+            {ContactInformation.getCountryValue(contact) || ""}</p>
         </div>
         <button className="btnEditContact"
                 onClick={() => ""}
@@ -160,22 +160,22 @@ class ContactInformation extends Component {
 
   render() {
     const {
-      localInfo,
+      data,
     } = this.props;
 
     return (
       <div className='contactInformation'>
-        { this.renderQuickInfoRecap(localInfo) }
-        { this.renderAccountForm() }
+        { this.renderQuickInfoRecap(fromJS(data)) }
+        {/*{ this.renderAccountForm() }*/}
       </div>
     );
   }
 }
 
 ContactInformation.proptypes = {
-  localInfo: PropTypes.object.isRequired,
-  render: PropTypes.object.isRequired,
-  contact: PropTypes.func.isRequired,
+  data: PropTypes.object.isRequired,
+  // render: PropTypes.object.isRequired,
+  // contact: PropTypes.func.isRequired,
   // setAddress: PropTypes.func.isRequired,
   // setFirstname: PropTypes.func.isRequired,
   // setLastname: PropTypes.func.isRequired,
@@ -188,7 +188,7 @@ ContactInformation.proptypes = {
 };
 
 ContactInformation.defaultProps = {
-  localInfo: {},
+  data: {},
 };
 
 export default injectIntl(ContactInformation);
