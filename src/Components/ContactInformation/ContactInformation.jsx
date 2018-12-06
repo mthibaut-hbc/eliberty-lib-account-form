@@ -13,75 +13,75 @@ class ContactInformation extends Component {
     super(props);
   }
 
-  static getLastnameValue(contact) {
-    return contact.size > 0
-      ? contact.get('lastname')
+  static getLastnameValue(localInfo) {
+    return localInfo.size > 0
+      ? localInfo.get('lastname')
       : '';
   }
 
-  static getFirstnameValue(contact) {
-    return contact.size > 0
-      ? contact.get('firstname')
+  static getFirstnameValue(localInfo) {
+    return localInfo.size > 0
+      ? localInfo.get('firstname')
       : '';
   }
 
-  static getBirthdateValue(contact) {
-    return contact.size > 0
-      ? moment(contact.get('birthdate'), 'YYYY-MM-DD HH:mm:ssZZ').format('DD/MM/YYYY')
+  static getBirthdateValue(localInfo) {
+    return localInfo.size > 0
+      ? moment(localInfo.get('birthdate'), 'YYYY-MM-DD HH:mm:ssZZ').format('DD/MM/YYYY')
       : '';
   }
 
-  static getOptinValue(contact) {
-    return contact.size > 0
-      ? contact.get('optIn')
+  static getOptinValue(localInfo) {
+    return localInfo.size > 0
+      ? localInfo.get('optIn')
       : '';
   }
 
-  static getMobileValue(contact) {
-    return contact.size > 0
-      ? contact.get('mobile')
+  static getMobileValue(localInfo) {
+    return localInfo.size > 0
+      ? localInfo.get('mobile')
       : '';
   }
 
-  static getPhoneValue(contact) {
-    return contact.size > 0
-      ? contact.get('phone')
+  static getPhoneValue(localInfo) {
+    return localInfo.size > 0
+      ? localInfo.get('phone')
       : '';
   }
 
-  static getEmailValue(contact) {
-    return contact.size > 0
-      ? contact.get('email')
+  static getEmailValue(localInfo) {
+    return localInfo.size > 0
+      ? localInfo.get('email')
       : '';
   }
 
-  static getAddress1Value(contact) {
-    return contact.size !== undefined
-      ? contact.get('addresses', new Map()).get('address1')
+  static getAddress1Value(localInfo) {
+    return localInfo.size !== undefined
+      ? localInfo.get('addresses', new Map()).get('address1')
       : '';
   }
 
-  static getAddress2Value(contact) {
-    return contact.size !== undefined
-      ? contact.get('addresses', new Map()).get('address2')
+  static getAddress2Value(localInfo) {
+    return localInfo.size !== undefined
+      ? localInfo.get('addresses', new Map()).get('address2')
       : '';
   }
 
-  static getZipcodeValue(contact) {
-    return contact.size !== undefined
-      ? contact.get('addresses', new Map()).get('zipcode')
+  static getZipcodeValue(localInfo) {
+    return localInfo.size !== undefined
+      ? localInfo.get('addresses', new Map()).get('zipcode')
       : '';
   }
 
-  static getCityValue(contact) {
-    return contact.size !== undefined
-      ? contact.get('addresses', new Map()).get('city')
+  static getCityValue(localInfo) {
+    return localInfo.size !== undefined
+      ? localInfo.get('addresses', new Map()).get('city')
       : '';
   }
 
-  static getCountryValue(contact) {
-    return contact.size !== undefined
-      ? contact.get('addresses', new Map()).get('country')
+  static getCountryValue(localInfo) {
+    return localInfo.size !== undefined
+      ? localInfo.get('addresses', new Map()).get('country')
       : '';
   }
 
@@ -101,8 +101,7 @@ class ContactInformation extends Component {
     </svg>
   }
 
-  renderQuickInfoRecap(data) {
-    const contact = data.get('contact');
+  renderQuickInfoRecap(localInfo) {
     return (
       <div className="quickInfoRecap col-xs-12">
         <span className="bookSvg">{ContactInformation.renderSvgBook()}</span>
@@ -115,21 +114,21 @@ class ContactInformation extends Component {
           <p><FormattedMessage id="rp.checkout.billingaddress.address1" defaultMessage="address1"/></p>
         </div>
         <div className="col-xs-6">
-          <p>{ContactInformation.getEmailValue(contact) || ""}</p>
-          <p>{ContactInformation.getFirstnameValue(contact) || ""}</p>
-          <p>{ContactInformation.getFirstnameValue(contact) || ""}</p>
-          <p>{ContactInformation.getMobileValue(contact) || ""}</p>
+          <p>{ContactInformation.getEmailValue(localInfo) || ""}</p>
+          <p>{ContactInformation.getFirstnameValue(localInfo) || ""}</p>
+          <p>{ContactInformation.getFirstnameValue(localInfo) || ""}</p>
+          <p>{ContactInformation.getMobileValue(localInfo) || ""}</p>
 
-          <p>{ContactInformation.getAddress1Value(contact) || ""}
-            {ContactInformation.getAddress2Value(contact) || ""}
-            {ContactInformation.getZipcodeValue(contact) || ""}
-            {ContactInformation.getCityValue(contact) || ""}
-            {ContactInformation.getCountryValue(contact) || ""}</p>
+          <p>{ContactInformation.getAddress1Value(localInfo) || ""}
+            {ContactInformation.getAddress2Value(localInfo) || ""}
+            {ContactInformation.getZipcodeValue(localInfo) || ""}
+            {ContactInformation.getCityValue(localInfo) || ""}
+            {ContactInformation.getCountryValue(localInfo) || ""}</p>
         </div>
         <button className="btnEditContact"
                 onClick={() => ""}
                 type="submit">
-          <FormattedMessage id="rp.forms.identification.modification.button" defaultMessage="edit"/>
+          <FormattedMessage id="rp.checkout.edit.data.button.label" defaultMessage="edit"/>
         </button>
       </div>
     );
@@ -165,7 +164,7 @@ class ContactInformation extends Component {
 
     return (
       <div className='contactInformation'>
-        { this.renderQuickInfoRecap(fromJS(data)) }
+        { this.renderQuickInfoRecap(fromJS(data.localInfo)) }
         {/*{ this.renderAccountForm() }*/}
       </div>
     );
