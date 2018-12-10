@@ -105,7 +105,9 @@ class ContactInformation extends Component {
     return (
       <div className="quickInfoRecap col-xs-12">
         <span className="bookSvg">{ContactInformation.renderSvgBook()}</span>
-        <p className="titleRecapContact">Informations de contact</p>
+        <p className="titleRecapContact">
+          <FormattedMessage id="rp.checkout.summary.info.contact.label" defaultMessage="contact information"/>
+        </p>
         <div className="col-xs-4">
           <p><FormattedMessage id="rp.checkout.customer.email.label" defaultMessage="email"/></p>
           <p><FormattedMessage id="rp.checkout.customer.lastname" defaultMessage="lastname"/></p>
@@ -126,7 +128,7 @@ class ContactInformation extends Component {
             {ContactInformation.getCountryValue(localInfo) || ""}</p>
         </div>
         <button className="btnEditContact"
-                onClick={() => ""}
+                onClick={() => this.props.onClickEditAccount}
                 type="submit">
           <FormattedMessage id="rp.checkout.edit.data.button.label" defaultMessage="edit"/>
         </button>
@@ -134,38 +136,12 @@ class ContactInformation extends Component {
     );
   }
 
-  // renderAccountForm() {
-  //   return (
-  //     <div id="accountForm" className="checkout_part_content accountForm">
-  //       <div className="panel-body">
-  //         <AccountForm
-  //           contact={this.props.contact}
-  //           localInfo={this.props.localInfo}
-  //           render={this.props.render}
-  //           setAddress={this.props.setAddress}
-  //           setFirstname={this.props.setFirstname}
-  //           setLastname={this.props.setLastname}
-  //           setMobile={this.props.setMobile}
-  //           setOptIn={this.props.setOptIn}
-  //           setPhone={this.props.setPhone}
-  //           setEmail={this.props.setEmail}
-  //           setBirthdate={this.props.setBirthdate}
-  //           setPassword={this.props.setPassword}
-  //         />
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
   render() {
-    const {
-      data,
-    } = this.props;
+    const { data } = this.props;
 
     return (
       <div className='contactInformation'>
         { this.renderQuickInfoRecap(fromJS(data.localInfo)) }
-        {/*{ this.renderAccountForm() }*/}
       </div>
     );
   }
@@ -173,17 +149,7 @@ class ContactInformation extends Component {
 
 ContactInformation.proptypes = {
   data: PropTypes.object.isRequired,
-  // render: PropTypes.object.isRequired,
-  // contact: PropTypes.func.isRequired,
-  // setAddress: PropTypes.func.isRequired,
-  // setFirstname: PropTypes.func.isRequired,
-  // setLastname: PropTypes.func.isRequired,
-  // setMobile: PropTypes.func.isRequired,
-  // setOptIn: PropTypes.func.isRequired,
-  // setPhone: PropTypes.func.isRequired,
-  // setEmail: PropTypes.func.isRequired,
-  // setBirthdate: PropTypes.func.isRequired,
-  // setPassword: PropTypes.func.isRequired,
+  onClickEditAccount: PropTypes.function.isRequired,
 };
 
 ContactInformation.defaultProps = {
