@@ -128,7 +128,7 @@ class ContactInformation extends Component {
             {ContactInformation.getCountryValue(localInfo) || ""}</p>
         </div>
         <button className="btnEditContact"
-                onClick={() => this.props.onClickEditAccount}
+              //  onClick={() => this.props.onClickEditAccount}
                 type="submit">
           <FormattedMessage id="rp.checkout.edit.data.button.label" defaultMessage="edit"/>
         </button>
@@ -149,7 +149,7 @@ class ContactInformation extends Component {
 
 ContactInformation.proptypes = {
   data: PropTypes.object.isRequired,
-  onClickEditAccount: PropTypes.function.isRequired,
+  //onClickEditAccount: PropTypes.function.isRequired,
 };
 
 ContactInformation.defaultProps = {
