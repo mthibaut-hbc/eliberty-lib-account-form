@@ -10,44 +10,6 @@ import {isValidField} from '../../Helpers/ValidatorFieldsHelper';
  * Class : Account Form
  */
 class FormAccountEdit extends Component {
-
-  static getLastnameValue(localInfo) {
-    return localInfo.size > 0
-      ? localInfo.get('values').get('lastname')
-      : '';
-  }
-
-  static getFirstnameValue(localInfo) {
-    return localInfo.size > 0
-      ? localInfo.get('values').get('firstname')
-      : '';
-  }
-
-  static getBirthdateValue(localInfo) {
-    return localInfo.size > 0
-      ? moment(localInfo.get('values').get('birthdate'), 'YYYY-MM-DD HH:mm:ssZZ').format('DD/MM/YYYY')
-      : '';
-  }
-
-  static getOptinValue(localInfo) {
-    return localInfo.size > 0
-      ? localInfo.get('values').get('optIn')
-      : '';
-  }
-
-  static getMobileValue(localInfo) {
-    return localInfo.size > 0
-      ? localInfo.get('values').get('mobile')
-      : '';
-  }
-
-  static getPhoneValue(localInfo) {
-    return localInfo.size > 0
-      ? localInfo.get('values').get('phone')
-      : '';
-  }
-
-  // Define Constructor
   constructor(props) {
     super(props);
 
@@ -116,58 +78,76 @@ class FormAccountEdit extends Component {
     this.props.setPhone(value);
   }
 
+  /**
+   *
+   * @param key
+   * @returns {string}
+   */
+  getValueForInput(key) {
+    return this.props.localInfo.size > 0
+      ? this.props.localInfo.get(key)
+      : '';
+  }
+
+  /**
+   *
+   * @param localInfo
+   * @returns {string}
+   */
+  getBirthdateValue(key) {
+    return this.props.localInfo.size > 0
+      ? moment(this.props.localInfo.get(key), 'YYYY-MM-DD HH:mm:ssZZ').format('DD/MM/YYYY')
+      : '';
+  }
+
 
   render() {
     const { formatMessage } = this.props.intl;
-    const {
-      data
-    } = this.props;
 
     return (
       <div id="accountForm" className="checkout_part_content accountForm">
         <div className="panel-body">
           <form>
             <div className="row form_content_wrapper">
-              <div className="col-xs-12 ">
-                <h5><FormattedMessage id="rp.forms.required.input" defaultMessage="required input"/></h5>
-              </div>
-              <div className="form-group">
-                <div className="col-xs-12">
-                  <input type="text"
-                         id="account_user_lastname"
-                         disabled="disabled"
-                         required="required"
-                         placeholder={formatMessage({
-                           id: 'rp.checkout.customer.lastname',
-                           defaultMessage: 'lastname'
-                         })}
-                         data-control="true"
-                         value={FormAccountEdit.getLastnameValue(data.localInfo) || ""}
-                  />
-                  <label htmlFor="account_user_lastname" className="control-label">
-                    <FormattedMessage id="rp.checkout.customer.lastname" defaultMessage="lastname"/>
-                  </label>
+              <div className="col-xs-12">
+                <div className="form-group">
+                  <div className="col-xs-12">
+                    <input type="text"
+                           id="account_user_lastname"
+                           disabled="disabled"
+                           required="required"
+                           placeholder={formatMessage({
+                             id: 'rp.checkout.customer.lastname',
+                             defaultMessage: 'lastname'
+                           })}
+                           data-control="true"
+                           value={this.getValueForInput('lastname') || ""}
+                    />
+                    <label htmlFor="account_user_lastname" className="control-label">
+                      <FormattedMessage id="rp.checkout.customer.lastname" defaultMessage="lastname"/>
+                    </label>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="row form_content_wrapper ">
-              <div className="form-group">
-                <div className="col-xs-12">
-                  <input type="text"
-                         id="account_user_firstname"
-                         disabled="disabled"
-                         required="required"
-                         placeholder={formatMessage({
-                           id: 'rp.checkout.customer.firstname',
-                           defaultMessage: 'firstname'
-                         })}
-                         data-control="true"
-                         value={FormAccountEdit.getFirstnameValue(data.localInfo) || ""}
-                  />
-                  <label htmlFor="account_user_firstname" className="control-label">
-                    <FormattedMessage id="rp.checkout.customer.firstname" defaultMessage="firstname"/>
-                  </label>
+              <div className="row form_content_wrapper">
+                <div className="form-group">
+                  <div className="col-xs-12">
+                    <input type="text"
+                           id="account_user_firstname"
+                           disabled="disabled"
+                           required="required"
+                           placeholder={formatMessage({
+                             id: 'rp.checkout.customer.firstname',
+                             defaultMessage: 'firstname'
+                           })}
+                           data-control="true"
+                           value={this.getValueForInput('firstname') || ""}
+                    />
+                    <label htmlFor="account_user_firstname" className="control-label">
+                      <FormattedMessage id="rp.checkout.customer.firstname" defaultMessage="firstname"/>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
@@ -185,7 +165,7 @@ class FormAccountEdit extends Component {
                            defaultMessage: 'birthdate'
                          })}
                          data-control="true"
-                         value={FormAccountEdit.getBirthdateValue(data.localInfo) || ""}
+                         value={this.getBirthdateValue('birthdate') || ""}
                   />
                   <label htmlFor="account_user_birthdate" className="control-label">
                     <FormattedMessage id="rp.checkout.customer.birthdate" defaultMessage="birthdate"/>
@@ -198,18 +178,19 @@ class FormAccountEdit extends Component {
               <div className="col-sm-6 no-padding">
                 <div className="form-group">
                   <div className="col-xs-12">
-                    <IntlTelInput preferredCountries={['fr']}
-                                  css={['intl-tel-input', 'form-control']}
-                                  fieldId={'account_user_mobile'}
-                                  utilsScript={'libphonenumber.js'}
-                                  format
-                                  defaultValue=''
-                                  autoPlaceholder
-                                  autoHideDialCode
-                                  onPhoneNumberChange={this.onchangeMobile}
-                                  onPhoneNumberBlur={this.onchangeMobile}
-                                  value={FormAccountEdit.getMobileValue(data.localInfo) || ""}
-                                  formatOnInit={false}
+                    <IntlTelInput
+                      preferredCountries={['fr']}
+                      css={['intl-tel-input', 'form-control']}
+                      fieldId={'account_user_mobile'}
+                      utilsScript={'libphonenumber.js'}
+                      format
+                      defaultValue=''
+                      autoPlaceholder
+                      autoHideDialCode
+                      onPhoneNumberChange={this.onchangeMobile}
+                      onPhoneNumberBlur={this.onchangeMobile}
+                      value={this.getValueForInput('mobile') || ""}
+                      formatOnInit={false}
                     />
                     <div className="phone-icon-elements">
                       <span className="phone-checker phone-icon fa fa-2x form-control-feedback withoutprepend fa-check" />
@@ -221,19 +202,20 @@ class FormAccountEdit extends Component {
               <div className="col-sm-6 no-padding">
                 <div className="form-group">
                   <div className="col-xs-12">
-                    <IntlTelInput preferredCountries={['fr']}
-                                  css={['intl-tel-input', 'form-control']}
-                                  fieldId={'account_user_phone'}
-                                  utilsScript={'libphonenumber.js'}
-                                  format
-                                  defaultValue=''
-                                  autoPlaceholder
-                                  autoHideDialCode
-                                  onPhoneNumberChange={this.onchangePhone}
-                                  onPhoneNumberBlur={this.onchangePhone}
-                                  value={FormAccountEdit.getPhoneValue(data.localInfo) || ""}
-                                  defaultCountry={'fr'}
-                                  formatOnInit={false}
+                    <IntlTelInput
+                      preferredCountries={['fr']}
+                      css={['intl-tel-input', 'form-control']}
+                      fieldId={'account_user_phone'}
+                      utilsScript={'libphonenumber.js'}
+                      format
+                      defaultValue=''
+                      autoPlaceholder
+                      autoHideDialCode
+                      onPhoneNumberChange={this.onchangePhone}
+                      onPhoneNumberBlur={this.onchangePhone}
+                      value={this.getValueForInput('phone') || ""}
+                      defaultCountry={'fr'}
+                      formatOnInit={false}
                     />
 
                     <div className="phone-icon-elements">
@@ -245,9 +227,9 @@ class FormAccountEdit extends Component {
             </div>
 
             <AddressForm
-              localInfo={data.localInfo}
-              render={render}
-              updateAddress={updateAddress}
+              localInfo={this.props.localInfo}
+              // render={render}
+              //   updateAddress={updateAddress}
             />
 
             <div className="col-md-12 cgv-option">
@@ -257,7 +239,7 @@ class FormAccountEdit extends Component {
                     <input type="checkbox"
                            id="account_user_optIn"
                            required="required"
-                           defaultChecked={FormAccountEdit.getOptinValue(data.localInfo) || false}
+                           defaultChecked={this.getValueForInput('optIn') || false}
                            value="1"
                            onChange={(e) => this.onchangeOptin(e)}
                     />
@@ -288,8 +270,8 @@ class FormAccountEdit extends Component {
   }
 }
 
-FormAccountEdit.proptypes = {
-  data: PropTypes.object.isRequired,
+FormAccountEdit.propTypes = {
+  localInfo: PropTypes.object.isRequired,
   // onClickEditAccount: PropTypes.func.isRequired,
   // setAddress: PropTypes.func.isRequired,
   // setFirstname: PropTypes.func.isRequired,
@@ -303,7 +285,7 @@ FormAccountEdit.proptypes = {
 };
 
 FormAccountEdit.defaultProps = {
-  data: {},
+  localInfo: {},
 };
 
 export default injectIntl(FormAccountEdit);
