@@ -5,6 +5,7 @@ import moment from 'moment/src/moment';
 import IntlTelInput from "react-intl-tel-input";
 import AddressForm from "../AddressForm/AddressForm";
 import {isValidField} from '../../Helpers/ValidatorFieldsHelper';
+import 'react-intl-tel-input/dist/main.css';
 
 /**
  * Class : Account Form
@@ -107,163 +108,142 @@ class FormAccountEdit extends Component {
     return (
       <div id="accountForm" className="checkout_part_content accountForm">
         <div className="panel-body">
-          <form>
-            <div className="row form_content_wrapper">
-              <div className="col-xs-12">
-                <div className="form-group">
-                  <div className="col-xs-12">
-                    <input type="text"
-                           id="account_user_lastname"
-                           disabled="disabled"
-                           required="required"
-                           placeholder={formatMessage({
-                             id: 'rp.checkout.customer.lastname',
-                             defaultMessage: 'lastname'
-                           })}
-                           data-control="true"
-                           value={this.getValueForInput('lastname') || ""}
-                    />
-                    <label htmlFor="account_user_lastname" className="control-label">
-                      <FormattedMessage id="rp.checkout.customer.lastname" defaultMessage="lastname"/>
-                    </label>
-                  </div>
-                </div>
-              </div>
+          <div className="row form_content_wrapper">
+            <div className="col-xs-12 col-sm-6">
+              <input
+                type="text"
+                id="account_user_lastname"
+                disabled="disabled"
+                required="required"
+                placeholder={formatMessage({ id: 'rp.checkout.customer.lastname', defaultMessage: 'lastname' })}
+                data-control="true"
+                value={this.getValueForInput('lastname') || ""}
+              />
+              <label htmlFor="account_user_lastname" className="control-label">
+                <FormattedMessage id="rp.checkout.customer.lastname" defaultMessage="lastname"/>
+              </label>
+            </div>
 
-              <div className="row form_content_wrapper">
-                <div className="form-group">
-                  <div className="col-xs-12">
-                    <input type="text"
-                           id="account_user_firstname"
-                           disabled="disabled"
-                           required="required"
-                           placeholder={formatMessage({
-                             id: 'rp.checkout.customer.firstname',
-                             defaultMessage: 'firstname'
-                           })}
-                           data-control="true"
-                           value={this.getValueForInput('firstname') || ""}
-                    />
-                    <label htmlFor="account_user_firstname" className="control-label">
-                      <FormattedMessage id="rp.checkout.customer.firstname" defaultMessage="firstname"/>
-                    </label>
-                  </div>
-                </div>
+            <div className="col-xs-12 col-sm-6">
+              <input
+                type="text"
+                id="account_user_firstname"
+                disabled="disabled"
+                required="required"
+                placeholder={formatMessage({ id: 'rp.checkout.customer.firstname', defaultMessage: 'firstname' })}
+                data-control="true"
+                value={this.getValueForInput('firstname') || ""}
+              />
+              <label htmlFor="account_user_firstname" className="control-label">
+                <FormattedMessage id="rp.checkout.customer.firstname" defaultMessage="firstname"/>
+              </label>
+            </div>
+          </div>
+
+          <div className="row form_content_wrapper ">
+            <div className="col-xs-12 col-sm-6">
+              <input
+                type="text"
+                id="account_user_birthdate"
+                disabled="disabled"
+                required="required"
+                className="rp_date"
+                placeholder={formatMessage({id: 'rp.checkout.customer.birthdate', defaultMessage: 'birthdate'})}
+                data-control="true"
+                value={this.getBirthdateValue('birthdate') || ""}
+              />
+              <label htmlFor="account_user_birthdate" className="control-label">
+                <FormattedMessage id="rp.checkout.customer.birthdate" defaultMessage="birthdate"/>
+              </label>
+            </div>
+          </div>
+
+          <div className="row form_content_wrapper">
+            <div className="col-xs-12 col-sm-6">
+              <IntlTelInput
+                preferredCountries={['fr']}
+                css={['intl-tel-input', 'form-control']}
+                fieldId={'account_user_mobile'}
+                utilsScript={'libphonenumber.js'}
+                format
+                defaultValue={''}
+                autoPlaceholder
+                autoHideDialCode
+                onPhoneNumberChange={this.onchangeMovil}
+                onPhoneNumberBlur={this.onchangeMovil}
+                value={this.getValueForInput('mobile') || ''}
+                formatOnInit={false}
+              />
+              <div className="phone-icon-elements">
+                <span className="phone-checker phone-icon fa fa-2x form-control-feedback withoutprepend fa-check"/>
               </div>
             </div>
 
-            <div className="row form_content_wrapper ">
-              <div className="col-sm-12">
-                <div className="form-group">
-                  <input type="text"
-                         id="account_user_birthdate"
-                         disabled="disabled"
+
+            <div className="col-xs-12 col-sm-6">
+              <IntlTelInput
+                preferredCountries={['fr']}
+                css={['intl-tel-input', 'form-control']}
+                fieldId={'account_user_phone'}
+                utilsScript={'libphonenumber.js'}
+                format
+                defaultValue={''}
+                autoPlaceholder
+                autoHideDialCode
+                onPhoneNumberChange={this.onchangePhone}
+                onPhoneNumberBlur={this.onchangePhone}
+                value={this.getValueForInput('phone') || ''}
+                defaultCountry={'fr'}
+                formatOnInit={false}
+              />
+              <div className="phone-icon-elements">
+                <span
+                  className="phone-checker phone-icon fa fa-2x form-control-feedback withoutprepend fa-exclamation-triangle"/>
+              </div>
+            </div>
+          </div>
+
+          <AddressForm
+            localInfo={this.props.localInfo}
+            // render={render}
+            //   updateAddress={updateAddress}
+          />
+
+          <div className="col-md-12 cgv-option">
+            <div className="form-group">
+              <div className="col-md-12">
+                <div className="checkbox">
+                  <input type="checkbox"
+                         id="account_user_optIn"
                          required="required"
-                         className="rp_date"
-                         placeholder={formatMessage({
-                           id: 'rp.checkout.customer.birthdate',
-                           defaultMessage: 'birthdate'
-                         })}
-                         data-control="true"
-                         value={this.getBirthdateValue('birthdate') || ""}
+                         defaultChecked={this.getValueForInput('optIn') || false}
+                         value="1"
+                         onChange={(e) => this.onchangeOptin(e)}
                   />
-                  <label htmlFor="account_user_birthdate" className="control-label">
-                    <FormattedMessage id="rp.checkout.customer.birthdate" defaultMessage="birthdate"/>
+                  <label htmlFor="account_user_optIn">
+                    <FormattedMessage id="rp.forms.checkout.payment.optin" defaultMessage="optIn"/>
                   </label>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="row form_content_wrapper">
-              <div className="col-sm-6 no-padding">
-                <div className="form-group">
-                  <div className="col-xs-12">
-                    <IntlTelInput
-                      preferredCountries={['fr']}
-                      css={['intl-tel-input', 'form-control']}
-                      fieldId={'account_user_mobile'}
-                      utilsScript={'libphonenumber.js'}
-                      format
-                      defaultValue=''
-                      autoPlaceholder
-                      autoHideDialCode
-                      onPhoneNumberChange={this.onchangeMobile}
-                      onPhoneNumberBlur={this.onchangeMobile}
-                      value={this.getValueForInput('mobile') || ""}
-                      formatOnInit={false}
-                    />
-                    <div className="phone-icon-elements">
-                      <span className="phone-checker phone-icon fa fa-2x form-control-feedback withoutprepend fa-check" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="col-xs-12 cgv">
+            <FormattedMessage id="rp.forms.checkout.cnil" defaultMessage="cnil"/>
+          </div>
 
-              <div className="col-sm-6 no-padding">
-                <div className="form-group">
-                  <div className="col-xs-12">
-                    <IntlTelInput
-                      preferredCountries={['fr']}
-                      css={['intl-tel-input', 'form-control']}
-                      fieldId={'account_user_phone'}
-                      utilsScript={'libphonenumber.js'}
-                      format
-                      defaultValue=''
-                      autoPlaceholder
-                      autoHideDialCode
-                      onPhoneNumberChange={this.onchangePhone}
-                      onPhoneNumberBlur={this.onchangePhone}
-                      value={this.getValueForInput('phone') || ""}
-                      defaultCountry={'fr'}
-                      formatOnInit={false}
-                    />
-
-                    <div className="phone-icon-elements">
-                      <span className="phone-checker phone-icon fa fa-2x form-control-feedback withoutprepend fa-exclamation-triangle" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="row">
+            <div className="col-xs-12 col-sm-6"><b><b>
+              <button
+                className="btn-main btn-full btn-lg small-margin-top"
+                type="submit"
+                onClick={() => console.log('UPDATE CONTACT')}
+              >
+                <FormattedMessage id="rp.checkout.customer.next.btn" defaultMessage="accept and continue"/>
+              </button>
+            </b></b>
             </div>
-
-            <AddressForm
-              localInfo={this.props.localInfo}
-              // render={render}
-              //   updateAddress={updateAddress}
-            />
-
-            <div className="col-md-12 cgv-option">
-              <div className="form-group">
-                <div className="col-md-12">
-                  <div className="checkbox">
-                    <input type="checkbox"
-                           id="account_user_optIn"
-                           required="required"
-                           defaultChecked={this.getValueForInput('optIn') || false}
-                           value="1"
-                           onChange={(e) => this.onchangeOptin(e)}
-                    />
-                    <label htmlFor="account_user_optIn">
-                      <FormattedMessage id="rp.forms.checkout.payment.optin" defaultMessage="optIn"/>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-xs-12 cgv">
-              <FormattedMessage id="rp.forms.checkout.cnil" defaultMessage="cnil"/>
-            </div>
-
-            <div className="row">
-              <div className="col-xs-12"><b><b>
-                <button className="btn-main btn-full btn-lg small-margin-top" type="submit">
-                  <FormattedMessage id="rp.checkout.customer.next.btn" defaultMessage="accept and continue"/>
-                </button>
-              </b></b>
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     );
